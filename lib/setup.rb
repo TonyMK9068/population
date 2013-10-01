@@ -4,23 +4,18 @@ require "./csv_reader"
 class Setup
 
   def initialize
+
   end
 
+  def area 
+    @area ||= Area.new
+  end
 
-  def analytics_response  #takes rows setup by setup.rb and runs analytics.rb methods on them
-    self.analytics_prompt
-    case @user_analytics
-      when "a"
-        puts "There are #{@array_of_hash.unique_values(@key)}\'s in America"
-      when "b"
-        puts "There are #{@array_of_hash.datarows.value_small}\'s in America"
-      when "c" 
-        puts "There are #{@array_of_hash.datarows.value_large}\'s in America"
-      else
-        puts "Enter a letter A through D"
-        return @instance_name.analytics_prompt
+  def filter_by_state(input)
+    area.array_of_hash.collect do |array|
+      if array[:state] = input.downcase
+        print array["zipcode"]
+      end
     end
   end
-
-
 end

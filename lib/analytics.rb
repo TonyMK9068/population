@@ -2,7 +2,7 @@ require "./area"
 
 class Analytics 
 attr_accessor :value_small, :value_large, :sorted_key
-  def initialize(key)
+  def initialize
     @sorted_key =[]
     @value_small, @value_large = [], []
     @state_values=[]
@@ -31,9 +31,9 @@ attr_accessor :value_small, :value_large, :sorted_key
    end
 
   def filter_by_state(input)
-    @state_values = area.array_of_hash.collect do |array|
+    area.array_of_hash.collect do |array|
       if array["state"] == input
-        array["zipcode"]
+        @state_values << array["zipcode"]
       end
     end
     @state_values.uniq.length

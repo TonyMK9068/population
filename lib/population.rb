@@ -7,7 +7,7 @@ attr_reader :key
   end
 
   def analytics
-    @analytics ||= Analytics.new(@key)
+    @analytics ||= Analytics.new
   end
 
   def analytics_prompt
