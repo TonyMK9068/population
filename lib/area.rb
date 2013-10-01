@@ -5,8 +5,9 @@ class Area
 attr_accessor :array_of_hash, :formatted_key_array
   def initialize
     @formatted_key_array=[]
-    @array_of_hash =[]s
+    @array_of_hash =[]
     self.csvreader.rows_to_array('/home/vagrant/rubydocs/population/lib/populationcsv.csv')
+    self.create_hash_array
   end
 
   def csvreader

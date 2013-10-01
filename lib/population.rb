@@ -1,47 +1,23 @@
-require "./area"
+
 require "./analytics" 
 
 class Population
 attr_reader :key
   def initialize
-    self.area.create_hash_array
     self.analytics
-  end
-=begin
-  def return_individual_keys
-   area.formatted_key_array.each do |element|
-      puts "#{element.upcase}"
-    end
-  end
-=end
-  def area
-   @area ||= Area.new
-  end
-
-  def setup
-    @setup ||= Setup.new
   end
 
   def analytics
     @analytics ||= Analytics.new(@key)
   end
 
-  def initial_prompt  #removed temporarily...only needed if searching for values besides zipcodes
-=begin    
-    p "Choose a key from the following: "
-    self.return_individual_keys
-    @key = gets.chomp.downcase
-    until area.formatted_key_array.include?(@key)
-      p "Not a valid selection. Pick an item from the above list"
-      @key = gets.chomp
-    end
-    puts "You entered #{@key}" 
-=end
-  end
+  #def initial_prompt  #removed temporarily...only needed if searching for values besides zipcodes
+
+  #end
 
   #determine what the user wants to do with the zipcode
   def analytics_prompt
-    self.initial_prompt 
+    #self.initial_prompt 
     puts "Would you like to find..."
     puts "[A]: how many zip codes exist in the United States"
     puts "[B]: the smallest zip code"
