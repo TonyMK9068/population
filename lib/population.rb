@@ -1,4 +1,3 @@
-
 require "./analytics" 
 
 class Population
@@ -11,13 +10,7 @@ attr_reader :key
     @analytics ||= Analytics.new(@key)
   end
 
-  #def initial_prompt  #removed temporarily...only needed if searching for values besides zipcodes
-
-  #end
-
-  #determine what the user wants to do with the zipcode
   def analytics_prompt
-    #self.initial_prompt 
     puts "Would you like to find..."
     puts "[A]: how many zip codes exist in the United States"
     puts "[B]: the smallest zip code"

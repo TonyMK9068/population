@@ -1,4 +1,3 @@
-
 require "./csv_reader"
 
 class Area

@@ -1,4 +1,5 @@
 require 'csv'
+
 class CSVreader
 attr_accessor :csv_array
   def initialize

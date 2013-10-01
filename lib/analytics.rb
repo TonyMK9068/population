@@ -1,12 +1,9 @@
 require "./area"
 
-
-
 class Analytics 
 attr_accessor :value_small, :value_large, :sorted_key
   def initialize(key)
     @sorted_key =[]
-    #self.area.create_hash_array
     @value_small, @value_large = [], []
     @state_values=[]
   end
