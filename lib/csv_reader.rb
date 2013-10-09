@@ -6,7 +6,7 @@ attr_accessor :csv_array
     @csv_array =[]
   end
 
-  def rows_to_array(file_path="/home/vagrant/rubydocs/population/lib/populationcsv.csv")
+  def rows_to_array(file_path = "./populationcsv.csv")
     CSV.foreach(file_path) do |row|
       @csv_array << row
     end
